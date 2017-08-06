@@ -2,7 +2,7 @@
 return [
     'plugin' => [
         'name' => 'Your Twitch Community',
-        'description' => 'A robust blogging platform.'
+        'description' => 'Coming soon.'
     ],
-    'blog' => []
+    'twitch' => []
 ];
