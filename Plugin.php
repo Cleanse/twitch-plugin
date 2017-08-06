@@ -96,29 +96,6 @@ class Plugin extends PluginBase
             $streams = new UpdateStreams;
             $streams->updateIds();
         });
-
-        Event::listen('offline.sitesearch.query', function ($query) {
-
-            $items = Streamer::where('name', 'like', "%${query}%")
-                ->get();
-
-            $results = $items->map(function ($item) use ($query) {
-
-                $relevance = mb_stripos($item->name, $query) !== false ? 2 : 1;
-
-                return [
-                    'title'     => $item->name,
-                    'text'      => $item->status,
-                    'url'       => 'https://www.twitch.tv/' . $item->name,
-                    'relevance' => $relevance,
-                ];
-            });
-
-            return [
-                'provider' => 'Twitch',
-                'results'  => $results,
-            ];
-        });
     }
 
     /**
@@ -127,13 +104,13 @@ class Plugin extends PluginBase
      */
     public function registerSchedule($schedule)
     {
-//        $schedule->call(function () {
-//            $update = new UpdateStreams;
-//            $streams = $update->getList();
-//
-//            foreach ($streams as $streamers) {
-//                Queue::push('\Cleanse\Twitch\Classes\Jobs\GetStreams', ['streamers' => $streamers]);
-//            }
-//        })->everyFiveMinutes();
+       $schedule->call(function () {
+           $update = new UpdateStreams;
+           $streams = $update->getList();
+
+           foreach ($streams as $streamers) {
+               Queue::push('\Cleanse\Twitch\Classes\Jobs\GetStreams', ['streamers' => $streamers]);
+           }
+       })->everyFiveMinutes();
     }
 }
