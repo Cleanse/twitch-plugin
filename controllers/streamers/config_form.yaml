@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: Streamer
+form: ~/plugins/cleanse/twitch/models/streamer/fields.yaml
+modelClass: Cleanse\Twitch\Models\Streamer
+defaultRedirect: cleanse/twitch/streamers
+
+create:
+    redirect: cleanse/twitch/streamers/update/:id
+    redirectClose: cleanse/twitch/streamers
+
+update:
+    redirect: cleanse/twitch/streamers
+    redirectClose: cleanse/twitch/streamers

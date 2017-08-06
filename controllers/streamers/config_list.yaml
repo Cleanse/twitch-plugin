@@ -1,0 +1,47 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: ~/plugins/cleanse/twitch/models/streamer/columns.yaml
+
+# Model Class name
+modelClass: Cleanse\Twitch\Models\Streamer
+
+# List Title
+title: Manage Streamers
+
+# Link URL for each record
+recordUrl: cleanse/twitch/streamers/update/:id
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Records to display per page
+recordsPerPage: 25
+
+# Displays the list column set up button
+showSetup: true
+
+# Displays the sorting link on each column
+showSorting: true
+
+# Default sorting column
+defaultSort:
+    column: name
+    direction: asc
+
+# Display checkboxes next to each record
+showCheckboxes: false
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt
+
+# Filter widget configuration
+filter: config_filter.yaml
