@@ -1,0 +1,81 @@
+.cleanse-twitch-streamers {
+    padding: 10px 15px;
+    background-color: rgba(236, 238, 239, 1);
+}
+
+#online-streams, #offline-streams {
+    color: rgba(49, 44, 38, 1);
+}
+
+.cleanse-twitch-streamers svg {
+    margin-right: 5px;
+}
+
+.small-avatar {
+    width: 48px;
+}
+
+.online-col {
+    background-image: linear-gradient(
+            to right,
+            rgba(49, 44, 38, .9),
+            rgba(41, 30, 20, .75)
+    );
+}
+
+.online-col a {
+    color: rgba(161, 145, 119, 1);
+    text-decoration: none;
+}
+
+.online-col a:hover {
+    color: rgba(255, 255, 255, .75);
+    text-decoration: none;
+}
+
+.online-col-content {
+    height: 300px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.stream-overlay-status {
+    display: block;
+    margin: 5px;
+    padding: 5px 8px;
+    background-color: rgba(59, 132, 196, .66);
+    color: #ffffff;
+    text-align: center;
+}
+
+.online-col:hover .stream-overlay-status, .stream-overlay-status:hover {
+    background-color: rgba(59, 132, 196, 1);
+    color: #ffffff;
+}
+
+.online-footer {
+    padding: .75rem 0;
+}
+
+/** Grid **/
+.grid-container {
+    display: grid;
+    grid-auto-rows: 150px;
+    grid-gap: 1.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+}
+
+.outdated {
+    grid-row: span 1;
+}
+
+.recent {
+    grid-row: span 2;
+}
+
+.card a {
+    display: block;
+    max-height: 125px;
+    overflow: hidden;
+}
