@@ -1,0 +1,9 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Streamer
+        span: left
+        placeholder: Twitch Name
