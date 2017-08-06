@@ -1,5 +1,6 @@
 <?php namespace Cleanse\Twitch\Classes;
 
+use Config;
 use Log;
 use GuzzleHttp;
 use GuzzleHttp\Psr7;
