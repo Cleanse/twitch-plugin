@@ -23,7 +23,6 @@ class StreamersMini extends ComponentBase
     public function onRun()
     {
         $this->streamers = $this->page['streamers'] = $this->loadStreamers();
-        $this->carebears = $this->page['carebears'] = $this->loadCarebears();
     }
 
     public function loadStreamers()
