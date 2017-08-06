@@ -1,0 +1,25 @@
+{
+  "name": "Cleanse/twitch-plugin",
+  "type": "october-plugin",
+  "description": "Custom community Twitch plugin for October CMS",
+  "homepage": "https://github.com/Cleanse/twitch-plugin",
+  "keywords": [
+    "october",
+    "octobercms",
+    "twitch",
+    "twitch.tv"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Paul Lovato",
+      "email": "plovato@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "composer/installers": "~1.0",
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "minimum-stability": "dev"
+}
