@@ -7,5 +7,6 @@
  * - Register your application and enter your client id below.
  */
 return [
-    'twitchId' => ''
+    'twitchId' => '',
+    'miniMax' => 10
 ];

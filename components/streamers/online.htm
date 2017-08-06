@@ -1,0 +1,37 @@
+{% if streamers.count > 0 %}
+{% for row in streamers|batch(4) %}
+<div class="row mb-3">
+    {% for column in row %}
+    <div class="col-lg p-2 m-1 online-col">
+        <a href="https://www.twitch.tv/{{ column.name }}" title="{{ column.status }}" target="_blank">
+            <div class="d-flex justify-content-center align-items-center online-col-content"
+                 style="background-image: url(//static-cdn.jtvnw.net/previews-ttv/live_user_{{ column.name }}-640x360.jpg);">
+                {% if column.status %}
+                <h3 class="stream-overlay-status">
+                    {{ column.status }}
+                </h3>
+                {% endif %}
+            </div>
+
+            <div class="media online-footer">
+                <img class="rounded img-fluid mr-2 small-avatar" src="{{ column.logo }}">
+                <div class="media-body">
+                    <h5 class="mt-0">{{ column.name }}</h5>
+                    <p>{{ column.viewers }} <i class="fa fa-eye" aria-hidden="true"></i></p>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+{% else %}
+<p class="list-group-item no-streams">
+    <svg height="30px" version="1.1" viewBox="0 0 30 30" width="30px" x="0px" y="0px" class="svg-logo_glitch">
+        <path clip-rule="evenodd"
+              d="M21,9h-2v6h2V9z M5.568,3L4,7v17h5v3h3.886L16,24h5l6-6V3H5.568z M25,16l-4,4h-6l-3,3v-3H8V5h17V16z M16,9h-2v6h2V9z"
+              fill-rule="evenodd"></path>
+    </svg>
+    There are no streamers live.
+</p>
+{% endif %}

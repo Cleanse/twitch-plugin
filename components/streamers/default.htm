@@ -1,0 +1,11 @@
+<div class="cleanse-twitch-streamers">
+    <div>
+        <h2 id="online-streams" class="ml-2 ml-sm-0 display-4">Live</h2>
+        {% partial __SELF__~'::online' %}
+    </div>
+
+    <div>
+        <h3 id="offline-streams" class="ml-2 ml-sm-0 display-4">Offline</h3>
+        {% partial __SELF__~'::offline' %}
+    </div>
+</div>

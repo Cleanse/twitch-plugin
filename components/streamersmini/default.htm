@@ -1,0 +1,36 @@
+<div class="cleanse-twitch">
+    <div class="list-group">
+    {% if streamers|length > 0 %}
+        <a class="list-group-item" href="/streams">
+            <p>Streams</p>
+            <svg class="ml-auto" height="30px" version="1.1" viewBox="0 0 30 30" width="30px" x="0px" y="0px">
+                <path clip-rule="evenodd" 
+                      d="M21,9h-2v6h2V9z M5.568,3L4,7v17h5v3h3.886L16,24h5l6-6V3H5.568z M25,
+                         16l-4,4h-6l-3,3v-3H8V5h17V16z M16,9h-2v6h2V9z" fill-rule="evenodd"></path>
+            </svg>
+        </a>
+        {% for streamer in streamers %}
+        <a class="list-group-item mini-streamer" href="//www.twitch.tv/{{ streamer.name }}" target="_blank">
+            <div class="media">
+                <img height="55" class="d-flex align-self-start mr-3" 
+                     src="https://static-cdn.jtvnw.net/previews-ttv/live_user_{{ streamer.name }}-320x180.jpg" 
+                     alt="{{ streamer.name }} live on Twitch.">
+                <div class="media-body">
+                    <h5 class="mt-0">{{ streamer.name }}</h5>
+                    <p>{{ streamer.viewers }} <i class="fa fa-eye" aria-hidden="true"></i></p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    {% else %}
+        <a href="/streams" class="list-group-item no-streams">
+            <svg height="30px" version="1.1" viewBox="0 0 30 30" width="30px" x="0px" y="0px" class="svg-logo_glitch">
+                <path clip-rule="evenodd" d="M21,9h-2v6h2V9z M5.568,3L4,7v17h5v3h3.886L16,24h5l6-6V3H5.568z M25,
+                                             16l-4,4h-6l-3,3v-3H8V5h17V16z M16,9h-2v6h2V9z" 
+                      fill-rule="evenodd"></path>
+            </svg>
+            There are no streamers live.
+        </a>
+    {% endif %}
+    </div>
+</div>

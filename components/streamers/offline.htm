@@ -1,0 +1,24 @@
+<div class="card-columns grid-container">
+    {% for streamer in offline %}
+
+    <div class="card mb-3{{streamer.profile_banner ? ' recent' : ' outdated' }}">
+        <a href="https://www.twitch.tv/{{ streamer.name }}" title="{{ streamer.status }}" target="_blank">
+            {% if streamer.profile_banner %}
+            <img class="card-img-top img-fluid" src="{{ streamer.profile_banner }}">
+            {% endif %}
+            <div class="card-block">
+                <h4 class="card-title">{{ streamer.name }}</h4>
+                <p class="card-text">{{ streamer.status }}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">
+                    View Streamer's Page
+                </small>
+            </div>
+        </a>
+    </div>
+
+    {% else %}
+    <p>There are no streamers in the database.</p>
+    {% endfor %}
+</div>
